@@ -40,5 +40,14 @@ namespace InternshipPlatform_API.Services.UserService
             //SEND EMAIL TO registerData.email
             return serviceResponse;
         }
+
+        public async Task<bool> Login(LoginDto login)
+        {
+            var _user = await _userManager.FindByNameAsync(login.UserName);
+            var serviceResponse = new GlobalResponse<string>();
+            //var result = await this._signInManager.PasswordSignInAsync(username, password, rememberMe, false);
+            var result = _user != null && await _userManager.CheckPasswordAsync(_user, login.Password);
+            return result;
+        }
     }
 }

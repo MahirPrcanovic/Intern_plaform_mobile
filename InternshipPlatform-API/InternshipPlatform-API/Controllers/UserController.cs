@@ -15,7 +15,7 @@ namespace InternshipPlatform_API.Controllers
         public UserController(IUserService userService) {
             this._userService = userService;
         }
-        [HttpPost]
+        [HttpPost("/auth/register")]
         public async Task<IActionResult> Post(RegisterDto registerData)
         {
             var response = await this._userService.Create(registerData);
@@ -26,6 +26,22 @@ namespace InternshipPlatform_API.Controllers
             }
             
             return BadRequest(response);
+        }
+        [HttpPost("/auth/login")]
+        public async Task<IActionResult> Login(LoginDto login)
+        {
+            var success = await this._userService.Login(login);
+            var response = new GlobalResponse<string>();
+            if (success)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "Login not successfull.";
+                return BadRequest(response);
+            }
         }
     }
 }
