@@ -29,14 +29,14 @@ namespace InternshipPlatform_API.Controllers
             return BadRequest(response);
         }
         [HttpPost]
-        public async Task<IActionResult> Post(ApplicantCreateDto formData)
-        {
-            var response = await this._applicantService.Create(formData);
+        public async Task<IActionResult> Post(ApplicantCreateDto createApplicant){
+            var response = await this._applicantService.Create(createApplicant);
             if (response.Success)
             {
                 return Ok(response);
             }
             return BadRequest(response);
+
         }
     }
 }
