@@ -1,4 +1,5 @@
-﻿using InternshipPlatform_API.Services.CompanyService;
+﻿using InternshipPlatform_API.Dto.Request;
+using InternshipPlatform_API.Services.CompanyService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,16 @@ namespace InternshipPlatform_API.Controllers
             if (response.Success)
             {
                 return Ok(response);
+            }
+            return BadRequest(response);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Post(CompanyCreateDto createData)
+        {
+            var response = await this._companyService.Create(createData);
+            if (response.Success)
+            {
+                return Created("",response);
             }
             return BadRequest(response);
         }

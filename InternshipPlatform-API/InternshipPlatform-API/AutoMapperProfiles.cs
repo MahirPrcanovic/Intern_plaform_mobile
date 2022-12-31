@@ -8,6 +8,8 @@ namespace InternshipPlatform_API
         public AutoMapperProfiles()
         {
             CreateMap<ApplicantCreateDto, Applicant>();
+            CreateMap<CompanyCreateDto,Company>();
+            CreateMap<SelectionCreateDto, Selection>();
         }
     }
 }
