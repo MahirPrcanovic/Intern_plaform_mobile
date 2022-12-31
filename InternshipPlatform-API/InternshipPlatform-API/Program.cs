@@ -2,6 +2,8 @@ using InternshipPlatform_API.Data;
 using InternshipPlatform_API.Models;
 using InternshipPlatform_API.Services;
 using InternshipPlatform_API.Services.ApplicantService;
+using InternshipPlatform_API.Services.CompanyService;
+using InternshipPlatform_API.Services.SelectionService;
 using InternshipPlatform_API.Services.UserService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +22,8 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IApplicantService, ApplicantService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ISelectionService, SelectionService>();
 
 builder.Services.AddIdentity<ExtendUser, IdentityRole>(o =>
 {
