@@ -18,7 +18,7 @@ namespace InternshipPlatform_API.Services.UserService
 
         public async Task<GlobalResponse<string>> Create(RegisterDto registerData)
         {
-            var user = new ExtendUser { UserName = registerData.UserName };
+            var user = new ExtendUser { UserName = registerData.UserName, FirstName = registerData.FirstName, LastName = registerData.LastName };
             var result = await this._userManager.CreateAsync(user, registerData.Password);
             var serviceResponse = new GlobalResponse<string>();
             if (result.Succeeded)

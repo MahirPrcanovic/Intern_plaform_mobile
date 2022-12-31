@@ -28,6 +28,16 @@ namespace InternshipPlatform_API.Controllers
             }
             return BadRequest(response);
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSingle(Guid id)
+        {
+            var response = await this._applicantService.GetSingle(id);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return NotFound(response);
+        }
         [HttpPost]
         public async Task<IActionResult> Post(ApplicantCreateDto createApplicant){
             var response = await this._applicantService.Create(createApplicant);

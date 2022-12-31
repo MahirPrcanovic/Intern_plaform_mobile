@@ -58,5 +58,22 @@ namespace InternshipPlatform_API.Services.ApplicantService
             }
             return response;
         }
+
+        public async Task<GlobalResponse<Applicant>> GetSingle(Guid id)
+        {
+            var response = new GlobalResponse<Applicant>();
+            try
+            {
+                response.Data =await this._dataContext.Applicants.Include(a=>a.Selections).FirstOrDefaultAsync(a => a.Id == id);
+                if (response.Data == null) throw new Exception("No applicant found.");
+                
+            }catch(Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+                
+            }
+            return response;
+        }
     }
 }
