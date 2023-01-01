@@ -4,6 +4,7 @@ using InternshipPlatform_API.Dto;
 using InternshipPlatform_API.Dto.Request;
 using InternshipPlatform_API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.Design;
 
 namespace InternshipPlatform_API.Services.SelectionService
 {
@@ -23,7 +24,7 @@ namespace InternshipPlatform_API.Services.SelectionService
         var response = new GlobalResponse<List<Selection>>();
             try
             {
-                response.Data = await this._dataContext.Selections.ToListAsync();
+                response.Data = await this._dataContext.Selections.Include(c=>c.Applicants).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -42,6 +43,35 @@ namespace InternshipPlatform_API.Services.SelectionService
                 this._dataContext.Selections.Add(mappedSelection);
                 await this._dataContext.SaveChangesAsync();
                 response.Data = mappedSelection;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public async Task<GlobalResponse<Selection>> AddApplicant(Guid selectionId, Guid applicantId)
+        {
+            var response = new GlobalResponse<Selection>();
+            try
+            {
+                var applicant = await this._dataContext.Applicants.Where(s => s.Id == applicantId).FirstOrDefaultAsync();
+                var selection = await this._dataContext.Selections.Where(s => s.Id == selectionId).FirstOrDefaultAsync();
+                if (applicant == null) throw new Exception("Applicant does not exist.");
+                if (selection == null) throw new Exception("Selection does not exist.");
+                if (selection.Applicants == null)
+                {
+                    selection.Applicants = new List<Applicant>() { };
+                    selection.Applicants.Add(applicant);
+                }
+                else
+                {
+                    selection.Applicants.Add(applicant);
+                }
+                await this._dataContext.SaveChangesAsync();
+
             }
             catch (Exception ex)
             {

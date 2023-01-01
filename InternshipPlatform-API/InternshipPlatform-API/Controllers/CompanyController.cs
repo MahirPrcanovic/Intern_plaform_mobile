@@ -34,5 +34,15 @@ namespace InternshipPlatform_API.Controllers
             }
             return BadRequest(response);
         }
+        [HttpPut("{companyId}/{selectionId}")]
+        public async Task<IActionResult> AddSelection(Guid companyId,Guid selectionId)
+        {
+            var response = await this._companyService.AddSelection(companyId, selectionId);
+            if (response.Success)
+            {
+                return Created("", response);
+            }
+            return BadRequest(response);
+        }
     }
 }

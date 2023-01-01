@@ -8,5 +8,6 @@ namespace InternshipPlatform_API.Services.CompanyService
     {
         Task<GlobalResponse<List<Company>>> GetAll();
         Task<GlobalResponse<Company>> Create(CompanyCreateDto data);
+        Task<GlobalResponse<Selection>> AddSelection(Guid companyId, Guid selectionId);
     }
 }

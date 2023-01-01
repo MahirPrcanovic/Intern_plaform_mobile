@@ -8,5 +8,6 @@ namespace InternshipPlatform_API.Services.SelectionService
     {
         Task<GlobalResponse<List<Selection>>> GetAll();
         Task<GlobalResponse<Selection>> Create(SelectionCreateDto createData);
+        Task<GlobalResponse<Selection>> AddApplicant(Guid selectionId, Guid applicantId);
     }
 }

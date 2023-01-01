@@ -17,6 +17,34 @@ namespace InternshipPlatform_API.Services.CompanyService
             _mapper = mapper;
         }
 
+        public async Task<GlobalResponse<Selection>> AddSelection(Guid companyId, Guid selectionId)
+        {
+            var response = new GlobalResponse<Selection>();
+            try
+            {
+                var company = await this._dataContext.Companies.Where(s => s.Id == companyId).FirstOrDefaultAsync();
+                var selection = await this._dataContext.Selections.Where(s => s.Id == selectionId).FirstOrDefaultAsync();
+                if (company == null) throw new Exception("Company does not exist.");
+                if (selection == null) throw new Exception("Selection does not exist.");
+                if(company.Selections == null)
+                {
+                    company.Selections = new List<Selection>() { };
+                    company.Selections.Add(selection);
+                }
+                else
+                {
+                company.Selections.Add(selection);
+                }
+                await this._dataContext.SaveChangesAsync();
+
+            }catch(Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
         public async Task<GlobalResponse<Company>> Create(CompanyCreateDto data)
         {
             var response = new GlobalResponse<Company>();
@@ -37,7 +65,7 @@ namespace InternshipPlatform_API.Services.CompanyService
             var response = new GlobalResponse<List<Company>>();
             try
             {
-                response.Data = await this._dataContext.Companies.ToListAsync();
+                response.Data = await this._dataContext.Companies.Include(c=>c.Selections).ThenInclude(c=>c.Applicants).ToListAsync();
             }catch(Exception ex)
             {
                 response.Success = false;
