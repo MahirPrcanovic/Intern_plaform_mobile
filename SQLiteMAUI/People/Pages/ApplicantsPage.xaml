@@ -5,26 +5,82 @@
              Title="ApplicantsPage"
              BackgroundColor="#e1e1e1"
              >
-    
-        <VerticalStackLayout Margin="30">
+    <VerticalStackLayout Margin="30">
         <HorizontalStackLayout>
-            
-        <StackLayout Orientation="Horizontal" Spacing="120">
-            <Image Source="Resources/Splash/splash.svg" WidthRequest="70"/>
-            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent">
-                <Image Source="Resources/Images/search.svg" WidthRequest="20" HeightRequest="20"/>
-            </Frame>
-        </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="120">
+                <Image Source="Resources/Splash/splash.svg" WidthRequest="70"/>
+                <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent">
+                    <Image Source="Resources/Images/search.svg" WidthRequest="20" HeightRequest="20"/>
+                </Frame>
+            </StackLayout>
             <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" Margin="10,0,0,0">
                 <Image Source="Resources/Images/default_avatar.jpg" WidthRequest="20" HeightRequest="20"/>
             </Frame>
         </HorizontalStackLayout>
         <VerticalStackLayout Margin="0,20,0,0">
-            <Label Text="Hello" TextColor="Gray" FontSize="35"></Label>
-            <Label Text="{Binding userName}" FontSize="35" TextColor="Black"></Label>
+            <Label Text="Hello" TextColor="Gray" FontSize="35" FontFamily="SofiaSans"></Label>
+            <Label x:Name="userName"  FontSize="35" TextColor="Black" FontFamily="SofiaSans"></Label>
         </VerticalStackLayout>
+        <VerticalStackLayout Padding="0,30,0,0">
+            <Label Text="Explore applicants" TextColor="Black" FontSize="14" FontFamily="SofiaSans"></Label>
+            <ListView ItemsSource="{Binding StudentList}" ItemTapped="ListView_ItemTapped_1" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" BackgroundColor="WhiteSmoke" BorderColor="Transparent" Margin="0,20,0,0">
+                                <VerticalStackLayout>
 
-        <Label Text="Explore applicants" TextColor="Black" FontSize="14" FontFamily="OpenSans-Semibold"></Label>
+                                    <HorizontalStackLayout>
+                                        <VerticalStackLayout HorizontalOptions="Start">
+                                            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" BackgroundColor="LightBlue">
+                                                <Image Source="Resources/Images/default_avatar.jpg" WidthRequest="20" HeightRequest="20"/>
+                                            </Frame>
+                                        </VerticalStackLayout>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <HorizontalStackLayout>
+                                                <Label Text="{Binding FirstName}" TextColor="Black" VerticalOptions="Center" Margin="10,0,5,0" FontFamily="SofiaSans">
+                                                </Label>
+                                                <Label Text="{Binding LastName}" TextColor="Black" VerticalOptions="Center" FontFamily="SofiaSans"></Label>
+                                            </HorizontalStackLayout>
+                                            <Label Text="{Binding Email}" TextColor="Gray" FontFamily="SofiaSans" Margin="10,5,0,0"></Label>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Margin="0,10,0,0">
+                                        <Frame Padding="4" BorderColor="Transparent">
+                                            <Label Text="{Binding EducationLevel}" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Frame Padding="10" BackgroundColor="WhiteSmoke" BorderColor="Transparent">
+                <VerticalStackLayout>
+                    
+                <HorizontalStackLayout>
+                    <VerticalStackLayout HorizontalOptions="Start">
+                        <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" BackgroundColor="LightBlue">
+                            <Image Source="Resources/Images/default_avatar.jpg" WidthRequest="20" HeightRequest="20"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <HorizontalStackLayout>
+                            <Label Text="Mahir" TextColor="Black" VerticalOptions="Center" Margin="10,0,5,0" FontFamily="SofiaSans">
+                            </Label>
+                            <Label Text="Prcanovic" TextColor="Black" VerticalOptions="Center" FontFamily="SofiaSans"></Label>
+                        </HorizontalStackLayout>
+                        <Label Text="mojemail@gmail.com" TextColor="Gray" FontFamily="SofiaSans" Margin="10,5,0,0"></Label>
+                        </VerticalStackLayout>
+                </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="0,10,0,0">
+                        <Frame Padding="4" BorderColor="Transparent">
+                            <Label Text="education" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>-->
+        </VerticalStackLayout>
     </VerticalStackLayout>
-   
 </ContentPage>

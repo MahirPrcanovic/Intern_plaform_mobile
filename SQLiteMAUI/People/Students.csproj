@@ -44,6 +44,10 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\SofiaSansSemiCondensed-Black.ttf" />
+	</ItemGroup>
 	<ItemGroup>
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#e1e1e1" BaseSize="128,128" />
 	</ItemGroup>
