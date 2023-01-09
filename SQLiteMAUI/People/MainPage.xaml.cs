@@ -8,8 +8,8 @@ namespace People;
 
 public partial class MainPage : ContentPage
 {
-    StudentRepository repository;
-	public MainPage(StudentRepository studentRepository)
+    UserRepository repository;
+	public MainPage(UserRepository studentRepository)
 	{
 		InitializeComponent();
         repository = studentRepository;
@@ -17,26 +17,24 @@ public partial class MainPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        string UserName = email.Text;
+        string Email = email.Text;
         string Password = password.Text;
-        if (UserName == null || Password == null)
+        if (Email == null || Password == null)
         {
             await DisplayAlert("Warning", "Please input email and password", "OK");
             return;
         }
-        await DisplayAlert("Tryout", "Username is : " + UserName + "\n Password is : " + Password, "OK");
+        await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
         await Navigation.PushAsync(new ApplicantsPage());
+        await repository.AddNewUser(Email.ToString(), Password.ToString());
+        await DisplayAlert("Registered successfully", repository.StatusMessage, "OK");
         //repository.AddNewStudent(UserName.ToString());
         //await DisplayAlert("E", repository.StatusMessage, "OK");
     }
 
-    //public void OnGetButtonClicked(object sender, EventArgs args)
-    //{
-    //    statusMessage.Text = "";
-
-    //    List<Student> students = repository.GetAllStudents();
-    //    studentList.ItemsSource = students;
-    //}
-
+    private async void Button_Clicked_1(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RegisterApplicantPage());
+    }
 }
 

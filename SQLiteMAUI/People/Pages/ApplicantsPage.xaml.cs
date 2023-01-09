@@ -3,13 +3,13 @@ namespace People.Pages;
 
 public partial class ApplicantsPage : ContentPage
 {
-    public IList<Ss> StudentList { get; set; }
+    public IList<Student> StudentList { get; set; }
     public ApplicantsPage()
 	{
 		InitializeComponent();
 		userName.Text = "Mahir P.";
-        StudentList = new List<Ss> {
-           new Ss
+        StudentList = new List<Student> {
+           new Student
            {
                
                FirstName="Mahir",
@@ -19,7 +19,7 @@ public partial class ApplicantsPage : ContentPage
                CV = "nesto",
                CoverLetter="Nesto"
            },
-           new Ss
+           new Student
            {
                
                FirstName="Mahir2",
@@ -33,10 +33,10 @@ public partial class ApplicantsPage : ContentPage
 		BindingContext= this;
 	}
 
-    private void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
+    private async void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
     {
-        //var myListView = (ListView)sender;
-        //var odabranaTura = (Student)myListView.SelectedItem;
-        //await Navigation.PushModalAsync(new NavigationPage(new DetaljiTure(registrovanikorisnik, odabranaTura)));
+        var myListView = (ListView)sender;
+        var odabraniStudent = (Student)myListView.SelectedItem;
+        await Navigation.PushModalAsync(new NavigationPage(new ApplicationDetails(odabraniStudent.Email)));
     }
 }

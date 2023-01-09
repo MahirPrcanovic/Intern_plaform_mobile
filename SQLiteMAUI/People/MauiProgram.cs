@@ -20,8 +20,10 @@ public static class MauiProgram
 		// TODO: Dependency injection - Dodavanej isntance kako bi bila dostupna i moga se koristiti kroz cijelu aplikaciju
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<StudentRepository>();
-
+		builder.Services.AddSingleton<UserRepository>();
+		builder.Services.AddTransient<RegisterApplicantPage>();
 		builder.Services.AddTransient<ApplicantsPage>();
+		builder.Services.AddTransient<ApplicationDetails>();
         return builder.Build();
 	}
 }
