@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Pages.ApplicantsPage"
+             Title="ApplicantsPage"
+             BackgroundColor="#e1e1e1"
+             >
+    
+        <VerticalStackLayout Margin="30">
+        <HorizontalStackLayout>
+            
+        <StackLayout Orientation="Horizontal" Spacing="120">
+            <Image Source="Resources/Splash/splash.svg" WidthRequest="70"/>
+            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent">
+                <Image Source="Resources/Images/search.svg" WidthRequest="20" HeightRequest="20"/>
+            </Frame>
+        </StackLayout>
+            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" Margin="10,0,0,0">
+                <Image Source="Resources/Images/default_avatar.jpg" WidthRequest="20" HeightRequest="20"/>
+            </Frame>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Margin="0,20,0,0">
+            <Label Text="Hello" TextColor="Gray" FontSize="35"></Label>
+            <Label Text="{Binding userName}" FontSize="35" TextColor="Black"></Label>
+        </VerticalStackLayout>
+
+        <Label Text="Explore applicants" TextColor="Black" FontSize="14" FontFamily="OpenSans-Semibold"></Label>
+    </VerticalStackLayout>
+   
+</ContentPage>
