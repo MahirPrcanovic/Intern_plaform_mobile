@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace People.Data
 {
     // Jedna klasa u kojoj se definira manipualcija sa podacima vezanim za klasu Student
-    public class StudentRepository
+    public class PersonRepository
     {
         public string StatusMessage { get; set; }
 
         // TODO: Add variable for the SQLite connection
         private SQLiteConnection conn;
 
-        private void Init()
+        private async Task Init()
         {
             // TODO: Add code to initialize the repository
             if (conn != null)
@@ -25,7 +25,7 @@ namespace People.Data
             conn.CreateTable<Student>();
         }
 
-        public void AddNewStudent(string name)
+        public void AddNewStudent(Student student)
         {
             int result = 0;
             try
@@ -34,17 +34,17 @@ namespace People.Data
                 Init();
 
                 // basic validation to ensure a name was entered
-                if (string.IsNullOrEmpty(name))
+                if (string.IsNullOrEmpty(student.Email))
                     throw new Exception("Molimo unesite validno ime!?");
 
                 // TODO: Insert the new person into the database
-                result = conn.Insert(new Student { Email = name });
+                result =conn.Insert(student);
 
-                StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, name);
+                StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, student.Email);
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", name, ex.Message);
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", student.Email, ex.Message);
             }
 
         }

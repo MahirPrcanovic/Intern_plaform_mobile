@@ -1,35 +1,17 @@
+using People.Data;
 using People.Models;
 namespace People.Pages;
 
 public partial class ApplicantsPage : ContentPage
 {
-    public IList<Student> StudentList { get; set; }
-    public ApplicantsPage()
+    public List<Student> StudentList { get; set; }
+    PersonRepository repo;
+    public ApplicantsPage(PersonRepository prep)
 	{
 		InitializeComponent();
 		userName.Text = "Mahir P.";
-        StudentList = new List<Student> {
-           new Student
-           {
-               
-               FirstName="Mahir",
-               LastName="Prcanovic",
-               Email="mahirprcanovic@gmail.com",
-               EducationLevel = "nesto",
-               CV = "nesto",
-               CoverLetter="Nesto"
-           },
-           new Student
-           {
-               
-               FirstName="Mahir2",
-               LastName="Prcanovic2",
-               Email="mahirprcanovic2@gmail.com",
-               EducationLevel = "nesto",
-               CV = "nesto",
-               CoverLetter="Nesto"
-           }
-        };
+        repo = prep;
+        StudentList = repo.GetAllStudents();
 		BindingContext= this;
 	}
 

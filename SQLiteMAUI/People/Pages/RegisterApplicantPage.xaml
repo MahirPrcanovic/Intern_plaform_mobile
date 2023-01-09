@@ -6,6 +6,63 @@
              BackgroundColor="White"
              >
     <ScrollView>
-        <Label Text="Test" TextColor="Black"></Label>
+        <VerticalStackLayout Padding="40,40">
+            <VerticalStackLayout>
+                <Label Text="Hi there." TextColor="Gray" FontSize="35" FontAttributes="Bold" FontFamily="SofiaSans"></Label>
+                <Label Text="We are happy to see you here!" TextColor="Black" FontSize="35" FontAttributes="Bold" FontFamily="SofiaSans"></Label>
+            </VerticalStackLayout>
+            <VerticalStackLayout Padding="0,30">
+                <VerticalStackLayout Padding="0,10">
+                    <Label Text="email *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,0" CornerRadius="4" BorderColor="Gray">
+                        <Entry x:Name="email" Placeholder="john.doe@yourcompany.com" TextColor="Black" Keyboard="Email" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="First Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Entry x:Name="firstName" Placeholder="John" TextColor="Black" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Last Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Entry x:Name="lastName" Placeholder="Doe" TextColor="Black" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Education Level *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Picker
+                               x:Name="picker"
+                               TextColor="Gray" 
+                               FontAttributes="Bold"
+                               BackgroundColor="White"  
+                        ></Picker>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Cover Letter *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Entry x:Name="coverLetter" Placeholder="What motivates you to sign up?"  TextColor="Black"  BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="CV *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Entry x:Name="cv" Placeholder="Url to your cv"  TextColor="Black"  BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+            <Button Text="Sign up for internship" TextTransform="Uppercase" FontSize="16" BackgroundColor="DodgerBlue" TextColor="White" Clicked="Button_Clicked_1" >
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="20"
+                Opacity="0.8" />
+                </Button.Shadow>
+            </Button>
+            <Button Text="Login" TextColor="Gray" FontSize="14" Margin="0,20,0,0" Clicked="Button_Clicked"></Button>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
