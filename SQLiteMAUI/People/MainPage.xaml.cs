@@ -9,13 +9,6 @@ public partial class MainPage : ContentPage
 {
     UserRepository repository;
     PersonRepository personRepo;
-
-  
-
-    //public MainPage()
-    //{
-    //}
-
     public MainPage(UserRepository studentRepository,PersonRepository per)
 	{
 		InitializeComponent();
@@ -33,7 +26,17 @@ public partial class MainPage : ContentPage
             return;
         }
         await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
-        await Navigation.PushAsync(new ApplicantsPage(personRepo));
+
+        //repository.AddNewUser(Email, Password);
+        //await DisplayAlert("A", repository.StatusMessage, "OK");
+        if (repository.DoesExist(Email, Password) == true)
+        {
+            await Navigation.PushAsync(new ApplicantsPage(personRepo));
+        }
+        else
+        {
+            await DisplayAlert("Error", "Please check your credentials", "OK");
+        }
         //await repository.AddNewUser(Email.ToString(), Password.ToString());
         //await DisplayAlert("Registered successfully", repository.StatusMessage, "OK");
         //repository.AddNewStudent(UserName.ToString());

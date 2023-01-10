@@ -16,7 +16,7 @@ namespace People.Data
         // TODO: Add variable for the SQLite connection
         private SQLiteConnection conn;
 
-        private async Task Init()
+        private void Init()
         {
             // TODO: Add code to initialize the repository
             if (conn != null)
