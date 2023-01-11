@@ -2,6 +2,7 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:People"
+             xmlns:pages="clr-namespace:People.Pages"
              x:Class="People.App">
 
     <Application.Resources>
@@ -13,5 +14,11 @@
         
         </ResourceDictionary>
     </Application.Resources>
-    
+    <Application.MainPage>
+        <Shell FlyoutBehavior="Flyout" FlyoutHeaderBehavior="Fixed" FlyoutVerticalScrollMode="Auto">
+            <FlyoutItem Title="Register" Icon="default_avatar.svg">
+                <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}"></ShellContent>
+            </FlyoutItem>
+        </Shell>
+    </Application.MainPage>
 </Application>

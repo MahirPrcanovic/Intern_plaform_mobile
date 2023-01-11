@@ -4,6 +4,7 @@
              x:Class="People.Pages.RegisterApplicantPage"
              Title="RegisterApplicantPage"
              BackgroundColor="White"
+             Shell.NavBarIsVisible="False"
              >
     <ScrollView>
         <VerticalStackLayout Padding="40,40">

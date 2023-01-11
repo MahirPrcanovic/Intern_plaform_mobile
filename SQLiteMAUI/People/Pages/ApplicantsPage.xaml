@@ -5,7 +5,9 @@
              Title="ApplicantsPage"
              BackgroundColor="#e1e1e1"
              >
+    
     <VerticalStackLayout Margin="30">
+        
         <HorizontalStackLayout>
             <StackLayout Orientation="Horizontal" Spacing="120">
                 <Image Source="Resources/Splash/splash.svg" WidthRequest="70"/>

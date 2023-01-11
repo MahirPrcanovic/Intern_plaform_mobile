@@ -33,7 +33,6 @@ namespace People.Data
                 // TODO: Call Init()
                 Init();
 
-                // basic validation to ensure a name was entered
                 if (string.IsNullOrEmpty(student.Email))
                     throw new Exception("Molimo unesite validno ime!?");
 

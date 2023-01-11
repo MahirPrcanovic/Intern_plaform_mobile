@@ -5,6 +5,7 @@
              BackgroundColor="White"
              xmlns:viewmodel="clr-namespace:People.ViewModel"
              x:DataType="viewmodel:MainViewModel"
+             Shell.FlyoutBehavior="Disabled"
              >
     <ScrollView>
         <VerticalStackLayout Padding="40,100">

@@ -4,13 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:People"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:pages ="clr-namespace:People.Pages"
     Shell.NavBarIsVisible="False"
+    FlyoutBackgroundColor="AliceBlue"
     >
 
     <ShellContent
         Title="Lista studenata"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    <!--<Shell.FlyoutHeader>
+        
+    </Shell.FlyoutHeader>-->
+    <FlyoutItem Title="Cats">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Dogs" Icon="dog.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" />
+        </Tab>
+    </FlyoutItem>
 </Shell>
