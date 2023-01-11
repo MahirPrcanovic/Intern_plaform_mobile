@@ -2,7 +2,6 @@
 using People.Data;
 using People.Models;
 using People.Pages;
-
 namespace People;
 
 public partial class MainPage : ContentPage
@@ -14,6 +13,7 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
         personRepo = per;
         repository = studentRepository;
+        //BindingContext = m;
     }
 
     private async void Button_Clicked(object sender, EventArgs e)
@@ -31,7 +31,7 @@ public partial class MainPage : ContentPage
         //await DisplayAlert("A", repository.StatusMessage, "OK");
         if (repository.DoesExist(Email, Password) == true)
         {
-            await Navigation.PushAsync(new ApplicantsPage(personRepo));
+            await Shell.Current.GoToAsync(nameof(ApplicantsPage));
         }
         else
         {

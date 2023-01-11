@@ -53,6 +53,7 @@
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#e1e1e1" BaseSize="128,128" />
 	</ItemGroup>
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	  <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.3" />
 	</ItemGroup>

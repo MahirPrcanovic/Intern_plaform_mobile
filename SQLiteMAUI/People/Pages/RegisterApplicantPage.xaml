@@ -8,30 +8,30 @@
     <ScrollView>
         <VerticalStackLayout Padding="40,40">
             <VerticalStackLayout>
-                <Label Text="Hi there." TextColor="Gray" FontSize="35" FontAttributes="Bold" FontFamily="SofiaSans"></Label>
-                <Label Text="We are happy to see you here!" TextColor="Black" FontSize="35" FontAttributes="Bold" FontFamily="SofiaSans"></Label>
+                <Label Text="Hi there." TextColor="Gray" FontSize="35" FontAttributes="Bold"></Label>
+                <Label Text="We are happy to see you here!" TextColor="Black" FontSize="35" FontAttributes="Bold" ></Label>
             </VerticalStackLayout>
             <VerticalStackLayout Padding="0,30">
                 <VerticalStackLayout Padding="0,10">
-                    <Label Text="email *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="email *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,0" CornerRadius="4" BorderColor="Gray">
-                        <Entry x:Name="email" Placeholder="john.doe@yourcompany.com" TextColor="Black" Keyboard="Email" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                        <Entry x:Name="email" Placeholder="john.doe@yourcompany.com" TextColor="Black" Keyboard="Email" BackgroundColor="Transparent"></Entry>
                     </Frame>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="First Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="First Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
-                        <Entry x:Name="firstName" Placeholder="John" TextColor="Black" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                        <Entry x:Name="firstName" Placeholder="John" TextColor="Black" BackgroundColor="Transparent"></Entry>
                     </Frame>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="Last Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="Last Name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
-                        <Entry x:Name="lastName" Placeholder="Doe" TextColor="Black" BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                        <Entry x:Name="lastName" Placeholder="Doe" TextColor="Black" BackgroundColor="Transparent"></Entry>
                     </Frame>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="Education Level *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="Education Level *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" ></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
                         <Picker
                                x:Name="picker"
@@ -42,15 +42,15 @@
                     </Frame>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="Cover Letter *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="Cover Letter *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
-                        <Entry x:Name="coverLetter" Placeholder="What motivates you to sign up?"  TextColor="Black"  BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                        <Entry x:Name="coverLetter" Placeholder="What motivates you to sign up?"  TextColor="Black"  BackgroundColor="Transparent"></Entry>
                     </Frame>
                 </VerticalStackLayout>
                 <VerticalStackLayout>
-                    <Label Text="CV *" TextTransform="Uppercase" FontSize="14" TextColor="Gray" FontFamily="SofiaSans"></Label>
+                    <Label Text="CV *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
                     <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
-                        <Entry x:Name="cv" Placeholder="Url to your cv"  TextColor="Black"  BackgroundColor="Transparent" FontFamily="SofiaSans"></Entry>
+                        <Entry x:Name="cv" Placeholder="Url to your cv"  TextColor="Black"  BackgroundColor="Transparent"></Entry>
                     </Frame>
                 </VerticalStackLayout>
             </VerticalStackLayout>
