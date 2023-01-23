@@ -69,5 +69,11 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="utils\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\UtilsIcons\arrow_left.svg" />
+	</ItemGroup>
 
 </Project>

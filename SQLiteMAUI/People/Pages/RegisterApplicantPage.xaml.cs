@@ -10,13 +10,9 @@ public partial class RegisterApplicantPage : ContentPage
 {
     public string SelectedEducation { get; set; }
     List<string> Education;
-    PersonRepository repository;
-    UserRepository userRep;
-    public RegisterApplicantPage(PersonRepository userRepo,UserRepository rep)
+    public RegisterApplicantPage()
 	{
 		InitializeComponent();
-        userRep = rep;
-        repository = userRepo;
         Education = new List<string> { "High School", "Bachelor Undergraduate", "Bachelor Graduate","Master's Undergraduate", "Master's Graduate","Doctorate" };
         picker.ItemsSource = Education;
         BindingContext = this;
@@ -43,7 +39,7 @@ public partial class RegisterApplicantPage : ContentPage
             await DisplayAlert("Invalid Data", "Please insert all fields.", "Ok");
             return;
         }
-        repository.AddNewStudent(new Models.Student { Email = EmailG, LastName = LastName, FirstName = FirstName, CoverLetter = CL, CV = CV, EducationLevel = Education[pickerIndex] });
-        await DisplayAlert("Confirmation", repository.StatusMessage, "Ok");
+        App.PersonRepository.AddNewStudent(new Models.Student { Email = EmailG, LastName = LastName, FirstName = FirstName, CoverLetter = CL, CV = CV, EducationLevel = Education[pickerIndex] });
+        await DisplayAlert("Confirmation", App.PersonRepository.StatusMessage, "Ok");
     }
 }

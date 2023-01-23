@@ -7,18 +7,15 @@ namespace People;
 
 public partial class MainPage : ContentPage
 {
-    UserRepository repository;
-    PersonRepository personRepo;
     CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
     private string toastText = "";
     private ToastDuration duration = ToastDuration.Short;
     private double fontSize = 14;
-    public MainPage(UserRepository studentRepository,PersonRepository per)
+    public MainPage()
 	{
 
 		InitializeComponent();
-        personRepo = per;
-        repository = studentRepository;
+
         //BindingContext = m;
     }
 
@@ -34,7 +31,7 @@ public partial class MainPage : ContentPage
             return;
         }
         //await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
-        if (repository.DoesExist(Email, Password) == true)
+        if (App.UserRepository.DoesExist(Email, Password) == true)
         {
             await Shell.Current.GoToAsync(nameof(ApplicantsPage));
         }
@@ -53,7 +50,7 @@ public partial class MainPage : ContentPage
 
     private async void Button_Clicked_1(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RegisterApplicantPage(personRepo,repository));
+        await Navigation.PushAsync(new RegisterApplicantPage());
     }
 }
 
