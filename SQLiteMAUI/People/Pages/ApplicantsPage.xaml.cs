@@ -1,17 +1,17 @@
 using People.Data;
 using People.Models;
+using People.ViewModel;
+
 namespace People.Pages;
 
 public partial class ApplicantsPage : ContentPage
 {
     public List<Student> StudentList { get; set; }
-    PersonRepository repo;
-    public ApplicantsPage(PersonRepository prep)
+    public ApplicantsPage()
 	{
 		InitializeComponent();
 		userName.Text = "Mahir P.";
-        repo = prep;
-        StudentList = repo.GetAllStudents();
+        StudentList = App.PersonRepository.GetAllStudents();
 		BindingContext= this;
 	}
 
@@ -19,7 +19,7 @@ public partial class ApplicantsPage : ContentPage
     {
         var myListView = (ListView)sender;
         var odabraniStudent = (Student)myListView.SelectedItem;
-        await Navigation.PushModalAsync(new NavigationPage(new ApplicationDetails(odabraniStudent.Email)));
+        await Navigation.PushModalAsync(new NavigationPage(new ApplicationDetails(odabraniStudent.Id)));
     }
 
 

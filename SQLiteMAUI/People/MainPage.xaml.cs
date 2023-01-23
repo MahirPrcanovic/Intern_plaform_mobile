@@ -1,4 +1,5 @@
-﻿
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using People.Data;
 using People.Models;
 using People.Pages;
@@ -8,8 +9,13 @@ public partial class MainPage : ContentPage
 {
     UserRepository repository;
     PersonRepository personRepo;
+    CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+    private string toastText = "";
+    private ToastDuration duration = ToastDuration.Short;
+    private double fontSize = 14;
     public MainPage(UserRepository studentRepository,PersonRepository per)
 	{
+
 		InitializeComponent();
         personRepo = per;
         repository = studentRepository;
@@ -22,20 +28,22 @@ public partial class MainPage : ContentPage
         string Password = password.Text;
         if (Email == null || Password == null)
         {
-            await DisplayAlert("Warning", "Please input email and password", "OK");
+            toastText = "Please input email and password";
+            var toast = Toast.Make(toastText, duration, fontSize);
+            await toast.Show(cancellationTokenSource.Token);
             return;
         }
-        await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
-
-        //repository.AddNewUser(Email, Password);
-        //await DisplayAlert("A", repository.StatusMessage, "OK");
+        //await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
         if (repository.DoesExist(Email, Password) == true)
         {
             await Shell.Current.GoToAsync(nameof(ApplicantsPage));
         }
         else
         {
-            await DisplayAlert("Error", "Please check your credentials", "OK");
+            toastText= "Please check your credentials";
+            var toast = Toast.Make(toastText, duration, fontSize);
+            await toast.Show(cancellationTokenSource.Token);
+            //await DisplayAlert("Error", "Please check your credentials", "OK");
         }
         //await repository.AddNewUser(Email.ToString(), Password.ToString());
         //await DisplayAlert("Registered successfully", repository.StatusMessage, "OK");

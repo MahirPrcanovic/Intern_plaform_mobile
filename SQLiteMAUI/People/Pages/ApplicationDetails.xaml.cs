@@ -1,14 +1,14 @@
+using People.Data;
 using People.Models;
+using People.ViewModel;
 
 namespace People.Pages;
 
 public partial class ApplicationDetails : ContentPage
 {
-	string student;
-	public ApplicationDetails(String studentEmail)
+	public ApplicationDetails(int studentID)
 	{
 		InitializeComponent();
-		student = studentEmail;
-		lejbl.Text = student;
+		BindingContext = new ApplicationDetailsViewModel(studentID);
 	}
 }

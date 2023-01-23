@@ -63,5 +63,18 @@ namespace People.Data
 
             return new List<Student>();
         }
+        public Student GetSingleStudent(int id)
+        {
+            try
+            {
+                Init();
+                return conn.Table<Student>().FirstOrDefault(student => student.Id == id);
+            }catch(Exception ex)
+            {
+                StatusMessage = string.Format("Student does not exist. {0}", ex.Message);
+            }
+            return null;
+        }
+            
     }
 }
