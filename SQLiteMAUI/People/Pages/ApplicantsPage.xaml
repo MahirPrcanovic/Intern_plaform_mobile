@@ -25,7 +25,7 @@
         </VerticalStackLayout>
         <VerticalStackLayout Padding="0,30,0,0">
             <Label Text="Explore applicants" TextColor="Black" FontSize="14"></Label>
-            <ListView ItemsSource="{Binding StudentList}" ItemTapped="ListView_ItemTapped_1" RowHeight="100">
+            <ListView ItemsSource="{Binding StudentList}" ItemTapped="ListView_ItemTapped_1" RowHeight="100" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

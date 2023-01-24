@@ -1,0 +1,53 @@
+﻿using People.Models;
+using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace People.Data
+{
+    internal class CommentRepository
+    {
+        public string StatusMessage { get; set; }
+
+        private SQLiteConnection conn;
+
+        private void Init()
+        {
+            if (conn != null)
+                return;
+            conn = new SQLiteConnection(Database.DatabasePath, Database.Flags);
+            conn.CreateTable<Comments>();
+        }
+        public List<Comments> GetAllComments()
+        {
+            try
+            {
+                Init();
+                return conn.Table<Comments>().ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće isčitati podatke iz baze. {0}", ex.Message);
+            }
+            return new List<Comments>();
+        }
+        public void AddNewComment(Comments comment)
+        {
+            int result = 0;
+            try
+            {
+                Init();
+                result = conn.Insert(comment);
+
+                StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, comment.Text);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", comment.Text, ex.Message);
+            }
+        }
+    }
+}

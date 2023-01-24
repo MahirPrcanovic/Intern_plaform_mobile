@@ -8,24 +8,84 @@
              BackgroundColor="White"
              >
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <Image Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start"/>
-            <Frame Margin="0,40" BorderColor="Transparent" WidthRequest="300" HeightRequest="200" BackgroundColor="LightGray">
+        <VerticalStackLayout Padding="20" Margin="0">
+            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start"/>
+            <Frame Margin="0,40" BorderColor="Transparent" WidthRequest="300" HeightRequest="150" BackgroundColor="#f8f8f8">
                 <VerticalStackLayout>
-                    <Frame WidthRequest="60" HeightRequest="60" CornerRadius="60" BackgroundColor="LightGreen" BorderColor="Transparent" IsClippedToBounds="True">
-                        <Label Text="{Binding FirstLetterName}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ></Label>
-                    </Frame>
-                    <Label Text="Test" TextColor="Black" FontSize="20" HorizontalOptions="Center"/>
+                    <Label Text="{Binding FirstLastName}" TextColor="Black" FontSize="20" HorizontalOptions="Center" Margin="0,20" FontFamily="OpenSans"/>
+                    <HorizontalStackLayout HorizontalOptions="Center" Margin="0,15">
+                        <Label Text="PTF" Padding="0,0,20,0" TextColor="#001000" FontFamily="OpenSans"/>
+                        <Label Text="•" Padding="0,0,20,0" TextColor="Gray" FontFamily="OpenSans"/>
+                        <Label Text="BiH" Padding="0,0,20,0" TextColor="Black" FontFamily="OpenSans"/>
+                        <Label Text="•" Padding="0,0,20,0" TextColor="Gray" FontFamily="OpenSans"/>
+                        <Label Text="1 day ago" TextColor="Black"/>
+                    </HorizontalStackLayout>
                 </VerticalStackLayout>
             </Frame>
-            
-            <!--<Frame BorderColor="Transparent" CornerRadius="60" HeightRequest="60" WidthRequest="60">
-                --><!--<Frame HorizontalOptions="Center" BackgroundColor="Gray" WidthRequest="300" HeightRequest="200" BorderColor="Transparent" CornerRadius="60" Padding="0">
-                    <Frame CornerRadius="60" WidthRequest="60" HeightRequest="60" BorderColor="Transparent" BackgroundColor="LightGreen" Padding="0" Margin="0">
-                        <Label Text="{Binding FirstLetterName}" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                    </Frame>
-                </Frame>--><!--
-            </Frame>-->
+            <Frame WidthRequest="60" HeightRequest="60" Margin="0,-220,0,0" CornerRadius="60" BackgroundColor="LightGreen" BorderColor="White" IsClippedToBounds="True">
+                <Label Text="{Binding FirstLetterName}" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" ></Label>
+            </Frame>
+            <Frame Padding="0" WidthRequest="300" Margin="0,150" HeightRequest="100" CornerRadius="20" BorderColor="Transparent">
+                <FlexLayout VerticalOptions="Center" AlignItems="Center">
+                    <VerticalStackLayout Margin="20,0,0,0">
+                        <Frame BorderColor="Transparent" Padding="0" CornerRadius="50" WidthRequest="50" HeightRequest="50" BackgroundColor="#fce1aa" Margin="0,10">
+                            <Image Source="clockoutside.png" WidthRequest="20" HeightRequest="20"/>
+                        </Frame>
+                        <Label Text="Salary" TextColor="Black" FontSize="10" HorizontalTextAlignment="Center"/>
+                        <Label Text="$0" TextColor="#676767" FontSize="10" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,0,0,0">
+                        <Frame BorderColor="Transparent" Padding="0" CornerRadius="50" WidthRequest="50" HeightRequest="50" BackgroundColor="#fce1aa" Margin="0,10">
+                            <Image Source="usddolar.jpg" WidthRequest="20" HeightRequest="20"/>
+                        </Frame>
+                        <Label Text="Job Type" TextColor="Black" FontSize="10" HorizontalTextAlignment="Center"/>
+                        <Label Text="Part time" TextColor="#676767" FontSize="10" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Margin="20,0,0,0">
+                        <Frame BorderColor="Transparent" Padding="0" CornerRadius="50" WidthRequest="50" HeightRequest="50" BackgroundColor="#fce1aa" Margin="0,10">
+                            <Image Source="sofaicon.png" WidthRequest="20" HeightRequest="20"/>
+                        </Frame>
+                        <Label Text="Position" TextColor="Black" FontSize="10" HorizontalTextAlignment="Center"/>
+                        <Label Text="Junior" TextColor="#676767" FontSize="10" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+            </Frame>
+            <VerticalStackLayout >
+                <Label Text="Description" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,-120"/>
+                <HorizontalStackLayout Margin="0,140">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="Knowledge of online technology and related products, including web and mobile UI and tools." TextColor="Gray" WidthRequest="300"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,-120">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="Familiarity with user experience research principles and practices and how to use data to provide informed user insights." TextColor="Gray" WidthRequest="300"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,140">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="Experience developing information architecture for complex documentation sets or product suites." TextColor="Gray" WidthRequest="300"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Candidate Data" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,-100"/>
+                <HorizontalStackLayout Margin="0,140,0,20">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="Education Level:" TextColor="Black" Margin="10,0" FontAttributes="Bold"/>
+                    <Label Text="{Binding EducationLevel}" TextColor="Gray" WidthRequest="300"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="CV Url:" TextColor="Black" Margin="10,0" FontAttributes="Bold"/>
+                    <Label Text="{Binding CVUrl}" TextColor="Gray" WidthRequest="250"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,20">
+                    <Label Text="•" TextColor="Black" Margin="10,0"/>
+                    <Label Text="Cover Letter:" TextColor="Black" Margin="10,0" FontAttributes="Bold"/>
+                    <Label Text="{Binding CoverLetter}" TextColor="Gray" WidthRequest="250"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,20,0,0">
+                <Label Text="Comments" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

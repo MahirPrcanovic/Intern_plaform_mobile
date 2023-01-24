@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Java.Util;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,6 @@ namespace People.Models
 
         public string CoverLetter { get; set; } = string.Empty;
         public string CV { get; set; } = string.Empty;
+        public DateTime creationDate { get; set; } = DateTime.Today;
     }
 }

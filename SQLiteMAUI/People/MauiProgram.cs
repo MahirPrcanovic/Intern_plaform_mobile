@@ -27,6 +27,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<RegisterApplicantPage>();
 		builder.Services.AddSingleton<ApplicantsPage>();
 		builder.Services.AddSingleton<ApplicationDetails>();
+		builder.Services.AddSingleton<CommentRepository>();
         return builder.Build();
 	}
 }
