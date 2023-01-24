@@ -65,5 +65,20 @@ namespace People.Data
                 return false;
             }
         }
-    }
+        public User getUser(String email)
+        {
+            User found = null;
+            try
+            {
+                Init();
+                found = conn.Table<User>().FirstOrDefault(x => x.Email == email);
+                return found;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", email, ex.Message);
+                return null;
+            }
+        }
+}
 }

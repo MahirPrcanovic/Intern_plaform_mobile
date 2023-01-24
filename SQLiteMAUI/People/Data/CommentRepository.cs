@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace People.Data
 {
-    internal class CommentRepository
+    public class CommentRepository
     {
         public string StatusMessage { get; set; }
 
@@ -41,7 +41,8 @@ namespace People.Data
             {
                 Init();
                 result = conn.Insert(comment);
-
+                var student = App.UserRepository.getUser(comment.user.Email);
+                //student.Comments.Add(comment);
                 StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, comment.Text);
             }
             catch (Exception ex)

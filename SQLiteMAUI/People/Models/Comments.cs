@@ -10,6 +10,7 @@ namespace People.Models
         public int Id { get; set; }
         public string Text { get; set; } = string.Empty;
         public DateTime dateCreated = DateTime.Now;
+        public Student student;
         #nullable enable
         public User? user;
     }

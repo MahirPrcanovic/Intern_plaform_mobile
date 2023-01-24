@@ -19,7 +19,7 @@ public partial class ApplicantsPage : ContentPage
     {
         var myListView = (ListView)sender;
         var odabraniStudent = (Student)myListView.SelectedItem;
-        await Navigation.PushModalAsync(new NavigationPage(new ApplicationDetails(odabraniStudent.Id)));
+        await Navigation.PushAsync(new ApplicationDetails(odabraniStudent.Id));
     }
 
 

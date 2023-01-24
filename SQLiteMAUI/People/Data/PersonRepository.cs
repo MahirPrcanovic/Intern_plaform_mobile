@@ -1,4 +1,5 @@
-﻿ using People.Models;
+﻿
+ using People.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;

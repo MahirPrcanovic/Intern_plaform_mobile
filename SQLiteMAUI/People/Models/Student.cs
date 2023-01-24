@@ -22,6 +22,8 @@ namespace People.Models
 
         public string CoverLetter { get; set; } = string.Empty;
         public string CV { get; set; } = string.Empty;
-        public DateTime creationDate { get; set; } = DateTime.Today;
+        public DateTime CreationDate { get; set; } = DateTime.Today;
+#nullable enable
+        public List<Comments>? Comments { get; set; }
     }
 }

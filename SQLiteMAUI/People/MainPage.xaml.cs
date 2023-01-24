@@ -34,6 +34,7 @@ public partial class MainPage : ContentPage
         //await DisplayAlert("Tryout", "Username is : " + Email + "\n Password is : " + Password, "OK");
         if (App.UserRepository.DoesExist(Email, Password) == true)
         {
+            App.loggedInUser = App.UserRepository.getUser(Email);
             await Shell.Current.GoToAsync(nameof(ApplicantsPage));
         }
         else
