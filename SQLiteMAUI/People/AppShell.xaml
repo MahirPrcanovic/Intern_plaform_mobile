@@ -5,25 +5,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:People"
     xmlns:pages ="clr-namespace:People.Pages"
+    xmlns:localt="clr-namespace:People.utilities"
     Shell.NavBarIsVisible="False"
-    FlyoutBackgroundColor="AliceBlue"
+    FlyoutBackgroundColor="Black"
+    FlyoutWidth="250"
     >
-
-    <ShellContent
-        Title="Lista studenata"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <!--<Shell.FlyoutHeader>
-        
-    </Shell.FlyoutHeader>-->
-    <FlyoutItem Title="Cats">
+    <FlyoutItem
+        Title="Applicant page"
+        Icon="usdolar.jpg" >
         <Tab>
-            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:ApplicantsPage}" Route="ApplicantsPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Dogs" Icon="dog.png">
+    <FlyoutItem Title="Applicant page"
+                Icon="usdolar.jpg">
         <Tab>
-            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" />
+            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" Route="RegisterApplicantPage"/>
         </Tab>
     </FlyoutItem>
 </Shell>

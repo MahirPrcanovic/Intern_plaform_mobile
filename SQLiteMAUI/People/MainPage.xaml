@@ -6,6 +6,7 @@
              xmlns:viewmodel="clr-namespace:People.ViewModel"
              x:DataType="viewmodel:MainViewModel"
              Shell.FlyoutBehavior="Disabled"
+             Shell.TabBarIsVisible="false"
              >
     <ScrollView>
         <VerticalStackLayout Padding="40,100">

@@ -18,7 +18,7 @@ public static class MauiProgram
 				fonts.AddFont("SofiaSansSemiCondensed-Black.ttf", "SofiaSans");
 			}).UseMauiCommunityToolkit();
 		builder.Services.AddSingleton<ApplicationDetailsViewModel>();
-		// TODO: Dependency injection - Dodavanej isntance kako bi bila dostupna i moga se koristiti kroz cijelu aplikaciju
+		// TODO: Dependency injection - Dodavanje isntance kako bi bila dostupna i moga se koristiti kroz cijelu aplikaciju
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainViewModel>();
 		//builder.Services.AddSingleton<StudentRepository>();

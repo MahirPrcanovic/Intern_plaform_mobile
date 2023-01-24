@@ -5,6 +5,7 @@
              Title="RegisterApplicantPage"
              BackgroundColor="White"
              Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="false"
              >
     <ScrollView>
         <VerticalStackLayout Padding="40,40">

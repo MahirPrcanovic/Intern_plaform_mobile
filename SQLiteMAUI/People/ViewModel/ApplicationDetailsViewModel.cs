@@ -45,11 +45,6 @@ namespace People.ViewModel
             commentList = App.CommentRepository.GetAllStudentsComments(foundStudent.Id).ToObservableCollection();
         }
         [RelayCommand]
-        public async Task GoBack()
-        {
-            await Shell.Current.GoToAsync("..");
-        }
-        [RelayCommand]
         public void AddNewComment()
         {
             var comment = new Comments { CommentText = entryText, UserId = App.loggedInUser.Id, StudentId = foundStudent.Id };

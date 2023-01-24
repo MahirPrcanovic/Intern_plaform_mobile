@@ -10,8 +10,8 @@
              >
     <ScrollView>
         <VerticalStackLayout Padding="20" Margin="0">
-            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start" Command="{Binding GoBackCommand}"/>
-            <Frame Margin="0,40" BorderColor="Transparent" WidthRequest="300" HeightRequest="150" BackgroundColor="#f8f8f8">
+            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start" Clicked="ImageButton_Clicked"  />
+            <Frame Margin="0,40" BorderColor="Transparent" WidthRequest="300" HeightRequest="150" BackgroundColor="#f8f8f8" >
                 <VerticalStackLayout>
                     <Label Text="{Binding FirstLastName}" TextColor="Black" FontSize="20" HorizontalOptions="Center" Margin="0,20" FontFamily="OpenSans"/>
                     <HorizontalStackLayout HorizontalOptions="Center" Margin="0,15">
