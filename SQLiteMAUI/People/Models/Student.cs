@@ -28,5 +28,7 @@ namespace People.Models
         public DateTime CreationDate { get; set; } = DateTime.Today;
         [OneToMany]
         public ICollection<Comments> Comments { get; set; }
+        [ManyToMany(typeof(Selections))]
+        public ICollection<Selections> Students { get; set; }
     }
 }

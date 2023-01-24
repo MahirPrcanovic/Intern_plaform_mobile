@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Pages.SelectionsPage"
+             Title="SelectionsPage"
+             BackgroundColor="White"
+             xmlns:viewmodel="clr-namespace:People.ViewModel"
+             x:DataType="viewmodel:SelectionPageViewModel"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="40">
+            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start" Clicked="ImageButton_Clicked"  />
+            <Label 
+                    Text="Selections"
+                    VerticalOptions="Center" 
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -10,17 +10,20 @@
     FlyoutBackgroundColor="Black"
     FlyoutWidth="250"
     >
+
+    <ShellContent
+        Title="Flyout"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
     <FlyoutItem
-        Title="Applicant page"
-        Icon="usdolar.jpg" >
+        Title="Applicant page" >
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ApplicantsPage}" Route="ApplicantsPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Applicant page"
-                Icon="usdolar.jpg">
+    <FlyoutItem Title="Selections page">
         <Tab>
-            <ShellContent ContentTemplate="{DataTemplate pages:RegisterApplicantPage}" Route="RegisterApplicantPage"/>
+            <ShellContent ContentTemplate="{DataTemplate pages:SelectionsPage}" Route="SelectionsPage"/>
         </Tab>
     </FlyoutItem>
 </Shell>

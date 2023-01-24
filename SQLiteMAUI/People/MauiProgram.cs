@@ -18,16 +18,16 @@ public static class MauiProgram
 				fonts.AddFont("SofiaSansSemiCondensed-Black.ttf", "SofiaSans");
 			}).UseMauiCommunityToolkit();
 		builder.Services.AddSingleton<ApplicationDetailsViewModel>();
-		// TODO: Dependency injection - Dodavanje isntance kako bi bila dostupna i moga se koristiti kroz cijelu aplikaciju
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainViewModel>();
-		//builder.Services.AddSingleton<StudentRepository>();
 		builder.Services.AddSingleton<UserRepository>();
 		builder.Services.AddSingleton<PersonRepository>();
 		builder.Services.AddSingleton<RegisterApplicantPage>();
 		builder.Services.AddSingleton<ApplicantsPage>();
 		builder.Services.AddSingleton<ApplicationDetails>();
 		builder.Services.AddSingleton<CommentRepository>();
+		builder.Services.AddSingleton<SelectionsPage>();
+		builder.Services.AddSingleton<SelectionRepository>();
         return builder.Build();
 	}
 }

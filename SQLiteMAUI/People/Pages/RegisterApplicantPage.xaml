@@ -6,6 +6,7 @@
              BackgroundColor="White"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="false"
+             Shell.FlyoutBehavior="Disabled"
              >
     <ScrollView>
         <VerticalStackLayout Padding="40,40">

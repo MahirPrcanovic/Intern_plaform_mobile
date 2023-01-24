@@ -1,11 +1,8 @@
 ﻿using CommunityToolkit.Maui.Core.Extensions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using People.Data;
 using People.Models;
-using People.Pages;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace People.ViewModel
 {
