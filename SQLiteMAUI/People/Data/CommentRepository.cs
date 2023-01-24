@@ -41,14 +41,33 @@ namespace People.Data
             {
                 Init();
                 result = conn.Insert(comment);
-                var student = App.UserRepository.getUser(comment.user.Email);
+                var student = App.PersonRepository.GetSingleStudent(comment.StudentId);
+                student.Comments.Add(comment);
+                var user = App.UserRepository.getByID(comment.UserId);
+                user.Comments.Add(comment);
+                conn.Update(student);
+                conn.Update(user);
+                //var student = App.UserRepository.getUser(comment.user.Email);
                 //student.Comments.Add(comment);
-                StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, comment.Text);
+                StatusMessage = string.Format("{0} zapis(a) dodano (Student: {1})", result, comment.CommentText);
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", comment.Text, ex.Message);
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", comment.CommentText, ex.Message);
             }
+        }
+        public List<Comments> GetAllStudentsComments(int studentID)
+        {
+            try
+            {
+                Init();
+                return conn.Table<Comments>().Where(x=>x.StudentId== studentID).ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće isčitati podatke iz baze. {0}", ex.Message);
+            }
+            return new List<Comments>();
         }
     }
 }

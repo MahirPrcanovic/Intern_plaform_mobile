@@ -4,6 +4,7 @@
              x:Class="People.Pages.ApplicationDetails"
              Title="ApplicationDetails"
              xmlns:viewmodel="clr-namespace:People.ViewModel"
+             xmlns:localt="clr-namespace:People.Models"
              x:DataType="viewmodel:ApplicationDetailsViewModel"
              BackgroundColor="White"
              >
@@ -83,15 +84,42 @@
                     <Label Text="{Binding CoverLetter}" TextColor="Gray" WidthRequest="250"/>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
+            <Label Text="Comments" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            <VerticalStackLayout>
+                <ListView ItemsSource="{Binding CommentList}" RowHeight="100" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="localt:Comments">
+                            <ViewCell>
+                                <Frame Padding="10" BackgroundColor="WhiteSmoke" BorderColor="Transparent" Margin="0,20,0,0">
+                                    <VerticalStackLayout>
+                                        <HorizontalStackLayout>
+                                            <VerticalStackLayout HorizontalOptions="Start">
+                                                <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" BackgroundColor="Transparent">
+                                                    <Image Source="Resources/Images/comment.png" WidthRequest="20" HeightRequest="20"/>
+                                                </Frame>
+                                            </VerticalStackLayout>
+                                            <VerticalStackLayout VerticalOptions="Center">
+                                                <Label Text="{Binding DateCreated}" TextColor="Gray" VerticalOptions="Center" Margin="10,0,0,0"></Label>
+                                                <HorizontalStackLayout>
+                                                    <Label Text="{Binding CommentText}" TextColor="Black" VerticalOptions="Center" Margin="10,0,5,0"/>
+                                                </HorizontalStackLayout>
+                                            </VerticalStackLayout>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
             <VerticalStackLayout Margin="0,20,0,0">
-                <Label Text="Comments" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
                     <Entry BackgroundColor="Transparent" WidthRequest="200" TextColor="Black" Text="{Binding EntryText}"/>
                     <Button Text="Add comment" TextTransform="Uppercase" FontSize="16" BackgroundColor="DodgerBlue" TextColor="White" Margin="4,4,4,2" Command="{Binding AddNewCommentCommand}"/>
                 </HorizontalStackLayout>
                 <Line WidthRequest="340" HeightRequest="2" BackgroundColor="Black"/>
             </VerticalStackLayout>
-            
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

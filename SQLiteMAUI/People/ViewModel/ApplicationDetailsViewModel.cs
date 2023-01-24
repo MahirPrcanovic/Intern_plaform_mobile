@@ -1,10 +1,10 @@
-﻿using Android.Media;
-using AndroidX.Navigation;
+﻿using CommunityToolkit.Maui.Core.Extensions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using People.Data;
 using People.Models;
 using People.Pages;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace People.ViewModel
@@ -27,6 +27,8 @@ namespace People.ViewModel
         string coverLetter;
         [ObservableProperty]
         string entryText;
+        [ObservableProperty]
+        ObservableCollection<Comments> commentList;
         Student foundStudent;
         public ApplicationDetailsViewModel(int studentID)
         {
@@ -40,6 +42,7 @@ namespace People.ViewModel
             educationLevel = foundStudent.EducationLevel;
             cVUrl = foundStudent.CV;
             CoverLetter = foundStudent.CoverLetter;
+            commentList = App.CommentRepository.GetAllStudentsComments(foundStudent.Id).ToObservableCollection();
         }
         [RelayCommand]
         public async Task GoBack()
@@ -49,7 +52,10 @@ namespace People.ViewModel
         [RelayCommand]
         public void AddNewComment()
         {
-            App.CommentRepository.AddNewComment(new Comments {Text = entryText, user= App.loggedInUser, student= foundStudent });
+            var comment = new Comments { CommentText = entryText, UserId = App.loggedInUser.Id, StudentId = foundStudent.Id };
+            App.CommentRepository.AddNewComment(comment);
+            commentList.Add(comment);
+            entryText = string.Empty;
         }
     }
 }

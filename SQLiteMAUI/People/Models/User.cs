@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace People.Models
         public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        [OneToMany]
+        public ICollection<Comments> Comments { get; set; }
     }
 }

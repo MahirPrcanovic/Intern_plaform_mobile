@@ -1,7 +1,10 @@
-﻿using Java.Util;
-using SQLite;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +26,7 @@ namespace People.Models
         public string CoverLetter { get; set; } = string.Empty;
         public string CV { get; set; } = string.Empty;
         public DateTime CreationDate { get; set; } = DateTime.Today;
-#nullable enable
-        public List<Comments>? Comments { get; set; }
+        [OneToMany]
+        public ICollection<Comments> Comments { get; set; }
     }
 }

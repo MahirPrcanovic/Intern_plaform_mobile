@@ -80,5 +80,20 @@ namespace People.Data
                 return null;
             }
         }
-}
+        public User getByID(int ID)
+        {
+            User found = null;
+            try
+            {
+                Init();
+                found = conn.Table<User>().FirstOrDefault(x => x.Id == ID);
+                return found;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", ID, ex.Message);
+                return null;
+            }
+        }
+    }
 }
