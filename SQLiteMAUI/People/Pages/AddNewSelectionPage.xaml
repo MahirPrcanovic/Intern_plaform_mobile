@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Pages.AddNewSelectionPage"
+             Title="AddNewSelectionPage"
+             xmlns:viewmodel="clr-namespace:People.ViewModel"
+             x:DataType="viewmodel:AddNewSelectionViewModel"
+             BackgroundColor="White"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="40,40">
+            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" Clicked="ImageButton_Clicked"  />
+            <VerticalStackLayout>
+                <Label Text="Hi there." TextColor="Gray" FontSize="35" FontAttributes="Bold"></Label>
+                <Label Text="Add new selection." TextColor="Black" FontSize="35" FontAttributes="Bold" ></Label>
+            </VerticalStackLayout>
+            <VerticalStackLayout Padding="0,30">
+                <VerticalStackLayout Padding="0,10">
+                    <Label Text="name *" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,0" CornerRadius="4" BorderColor="Gray">
+                        <Entry Text="{Binding SelectionName}" Placeholder="Interns 03/2023" TextColor="Black" BackgroundColor="Transparent"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Description" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <Entry Text="{Binding Description}" Placeholder="John" TextColor="Black" BackgroundColor="Transparent"></Entry>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Date of Start" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                    <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                        <DatePicker Date="{Binding DateOfStart}" TextColor="Black" BackgroundColor="Transparent" MinimumDate="{Binding MinimumDate}"/>
+                    </Frame>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Date of End" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                        <Frame Padding="10,3,3,3" Margin="0,10,0,10" CornerRadius="4" BorderColor="Gray">
+                            <DatePicker Date="{Binding DateOfEnd}" TextColor="Black" BackgroundColor="Transparent" MinimumDate="{Binding MinimumDate}"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+            <Button Text="Create selection" TextTransform="Uppercase" FontSize="16" BackgroundColor="DodgerBlue" TextColor="White" Command="{Binding AddNewSelectionCommand}">
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="20"
+                Opacity="0.8" />
+                </Button.Shadow>
+            </Button>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

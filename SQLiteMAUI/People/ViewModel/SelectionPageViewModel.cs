@@ -1,19 +1,20 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Core.Extensions;
+using CommunityToolkit.Mvvm.ComponentModel;
+using People.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 
 namespace People.ViewModel
 {
     public partial class SelectionPageViewModel : ObservableObject
     {
         [ObservableProperty]
-        string text;
+        ObservableCollection<Selections> selectionList;
         public SelectionPageViewModel()
         {
-            text = "nesto test";
+            selectionList = App.SelectionRepository.GetAllSelections().ToObservableCollection();
         }
     }
 }

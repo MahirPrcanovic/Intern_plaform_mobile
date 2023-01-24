@@ -26,4 +26,9 @@
             <ShellContent ContentTemplate="{DataTemplate pages:SelectionsPage}" Route="SelectionsPage"/>
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Add new selection">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:AddNewSelectionPage}" Route="AddNewSelectionPage"/>
+        </Tab>
+    </FlyoutItem>
 </Shell>

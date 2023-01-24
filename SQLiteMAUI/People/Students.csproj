@@ -60,6 +60,9 @@
 	  <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.3" />
 	</ItemGroup>
 	<ItemGroup>
+	  <MauiXaml Update="Pages\AddNewSelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\ApplicantsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

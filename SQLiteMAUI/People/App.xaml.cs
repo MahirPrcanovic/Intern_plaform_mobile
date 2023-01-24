@@ -9,20 +9,15 @@ public partial class App : Application
     public static UserRepository UserRepository { get; set; }
     public static CommentRepository CommentRepository { get; set; }
     public static User loggedInUser { get; set; }
-    // TODO: Add a public static PersonRepository property
-    /// <summary>
-    /// public static PersonRepository PersonRepo { get; set; }
-    /// </summary>
+    public static SelectionRepository SelectionRepository { get; set; }
 
-    public App(PersonRepository repo,UserRepository user,CommentRepository com)
+    public App(PersonRepository repo,UserRepository user,CommentRepository com,SelectionRepository sel)
 	{
 		InitializeComponent();
 		MainPage = new AppShell();
         PersonRepository = repo;
         UserRepository = user;
         CommentRepository = com;
-        // TODO: Initialize the PersonRepository property with the PersonRespository singleton object
-        //PersonRepo = repo;
-
+        SelectionRepository = sel;
     }
 }

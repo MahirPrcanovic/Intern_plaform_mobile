@@ -1,7 +1,4 @@
-using People.Data;
 using People.Models;
-using People.ViewModel;
-
 namespace People.Pages;
 
 public partial class ApplicantsPage : ContentPage

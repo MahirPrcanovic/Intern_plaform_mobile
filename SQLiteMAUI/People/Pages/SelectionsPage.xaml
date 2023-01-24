@@ -4,6 +4,7 @@
              x:Class="People.Pages.SelectionsPage"
              Title="SelectionsPage"
              BackgroundColor="White"
+             xmlns:localt="clr-namespace:People.Models"
              xmlns:viewmodel="clr-namespace:People.ViewModel"
              x:DataType="viewmodel:SelectionPageViewModel"
              >
@@ -15,6 +16,32 @@
                     VerticalOptions="Center" 
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+
+            <ListView ItemsSource="{Binding SelectionList}" RowHeight="100" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localt:Selections">
+                        <ViewCell>
+                            <Frame Padding="10" BackgroundColor="WhiteSmoke" BorderColor="Transparent" Margin="0,20,0,0">
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <VerticalStackLayout HorizontalOptions="Start">
+                                            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" BackgroundColor="Transparent">
+                                                <Image Source="Resources/Images/comment.png" WidthRequest="20" HeightRequest="20"/>
+                                            </Frame>
+                                        </VerticalStackLayout>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding SelectionName}" TextColor="Gray" VerticalOptions="Center" Margin="10,0,0,0"></Label>
+                                            <HorizontalStackLayout>
+                                                <Label Text="{Binding DateOfStart}" TextColor="Black" VerticalOptions="Center" Margin="10,0,5,0"/>
+                                            </HorizontalStackLayout>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

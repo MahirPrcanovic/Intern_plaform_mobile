@@ -18,6 +18,8 @@ public static class MauiProgram
 				fonts.AddFont("SofiaSansSemiCondensed-Black.ttf", "SofiaSans");
 			}).UseMauiCommunityToolkit();
 		builder.Services.AddSingleton<ApplicationDetailsViewModel>();
+		builder.Services.AddSingleton<AddNewSelectionViewModel>();
+		builder.Services.AddSingleton<SelectionPageViewModel>();
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddSingleton<UserRepository>();
@@ -28,6 +30,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<CommentRepository>();
 		builder.Services.AddSingleton<SelectionsPage>();
 		builder.Services.AddSingleton<SelectionRepository>();
+		builder.Services.AddSingleton<AddNewSelectionPage>();
         return builder.Build();
 	}
 }
