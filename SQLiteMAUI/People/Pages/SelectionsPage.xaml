@@ -10,10 +10,21 @@
              >
     <ScrollView>
         <VerticalStackLayout>
-            <Frame Padding="30" WidthRequest="360" HeightRequest="170" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#f7e2bd">
+            <Frame Padding="30" WidthRequest="360" HeightRequest="200" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#f7e2bd">
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <HorizontalStackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="120">
+                            <Label WidthRequest="70"/>
+                            <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" BackgroundColor="#f8f8f8">
+                                <Image Source="Resources/Images/search.svg" WidthRequest="20" HeightRequest="20"/>
+                            </Frame>
+                        </StackLayout>
+                        <Frame CornerRadius="50" WidthRequest="50" HeightRequest="50" BorderColor="Transparent" Margin="10,0,0,0">
+                            <Image Source="Resources/Images/person.png" WidthRequest="50" HeightRequest="50"/>
+                        </Frame>
+                    </HorizontalStackLayout>
                     <VerticalStackLayout Margin="0,20,0,0">
-                        <Label Text="Selections" TextColor="WhiteSmoke" FontSize="35" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="Selections" TextColor="Black" FontSize="35" HorizontalTextAlignment="Center"></Label>
                     </VerticalStackLayout>
                 </VerticalStackLayout>
             </Frame>
@@ -26,7 +37,7 @@
                                 <Frame CornerRadius="40" WidthRequest="40" HeightRequest="40" BorderColor="Transparent">
                                     <Image Source="Resources/Images/mobileicon.png" WidthRequest="20" HeightRequest="20"/>
                                 </Frame>
-                                <Label Text="44.8k" Margin="0,5,0,5" TextColor="Black" FontSize="14" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding SelectionCount}" Margin="0,5,0,5" TextColor="Black" FontSize="14" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
                                 <Label Text="Applicants" TextColor="#5e6f74" FontSize="12" HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </Frame>
@@ -37,7 +48,7 @@
                                         <Image Source="Resources/Images/computer.png" WidthRequest="20" HeightRequest="20"/>
                                     </Frame>
                                     <VerticalStackLayout>
-                                        <Label Text="66.9k" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
+                                        <Label Text="{Binding LaterCount}" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
                                         <Label Text="Latest" TextColor="#5e6f74" FontSize="12"/>
                                     </VerticalStackLayout>
                                 </HorizontalStackLayout>
@@ -48,7 +59,7 @@
                                         <Image Source="Resources/Images/heart.png" WidthRequest="20" HeightRequest="20"/>
                                     </Frame>
                                     <VerticalStackLayout>
-                                        <Label Text="66.9k" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
+                                        <Label Text="{Binding FullTimeCount}" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
                                         <Label Text="Full time" TextColor="#5e6f74" FontSize="12"/>
                                     </VerticalStackLayout>
                                 </HorizontalStackLayout>
@@ -56,7 +67,7 @@
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
-                <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" >
+                <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" Margin="0,30,0,0">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localt:Selections">
                         <ViewCell>

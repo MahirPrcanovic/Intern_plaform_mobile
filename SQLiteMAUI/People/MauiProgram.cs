@@ -20,7 +20,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<ApplicationDetailsViewModel>();
 		builder.Services.AddSingleton<AddNewSelectionViewModel>();
 		builder.Services.AddSingleton<SelectionPageViewModel>();
-		builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<ProfilePageViewModel>();
+        builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddSingleton<UserRepository>();
 		builder.Services.AddSingleton<PersonRepository>();
@@ -31,6 +32,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<SelectionsPage>();
 		builder.Services.AddSingleton<SelectionRepository>();
 		builder.Services.AddSingleton<AddNewSelectionPage>();
+		builder.Services.AddSingleton<ProfilePage>();
         return builder.Build();
 	}
 }

@@ -95,5 +95,23 @@ namespace People.Data
                 return null;
             }
         }
+        public void ChangePassword(String email,String newPassword)
+        {
+            try
+            {
+                Init();
+                var user = getUser(email);
+                if (user == null) { return;}
+                user.Password = newPassword;
+                conn.Update(user);
+                StatusMessage = string.Format("Izmjena lozinke uspjesna!");
+                return;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće izmijeniti lozinku {0}. Greška: {1}", email, ex.Message);
+                return;
+            }
+        }
     }
 }

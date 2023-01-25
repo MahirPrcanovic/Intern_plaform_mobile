@@ -31,4 +31,9 @@
             <ShellContent ContentTemplate="{DataTemplate pages:AddNewSelectionPage}" Route="AddNewSelectionPage"/>
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Profile">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage"/>
+        </Tab>
+    </FlyoutItem>
 </Shell>

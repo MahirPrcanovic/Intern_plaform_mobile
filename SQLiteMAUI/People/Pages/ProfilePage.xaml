@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Pages.ProfilePage"
+             xmlns:viewmodel="clr-namespace:People.ViewModel"
+             x:DataType="viewmodel:ProfilePageViewModel"
+             BackgroundColor="White"
+             Title="ProfilePage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Frame HeightRequest="160" Padding="0">
+                <Image Source="Resources/Images/profileback.jpg" Aspect="AspectFill"/>
+            </Frame>
+            <Frame Padding="0" CornerRadius="100" WidthRequest="100" HeightRequest="100" Margin="0,-60" BorderColor="White" BackgroundColor="LightGreen">
+                <Image Source="Resources/Images/person.jpg"/>
+            </Frame>
+            <Frame Margin="0,100,0,50" BorderColor="Transparent">
+                <VerticalStackLayout>
+                    <Label Text="About" FontAttributes="Bold" Margin="0,0,0,10"/>
+                    <Label Text="Current software engineering student working for our company since July 2021. Big fan of F1 and Manchester United."/>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="0" HeightRequest="80" BorderColor="LightGray">
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <Image Source="Resource/Images/mailicon.png" WidthRequest="30" HeightRequest="30"/>
+                    <Label Text="{Binding Email}" VerticalOptions="Center" Margin="30,0,0,0" TextColor="Black"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Frame Margin="0,20" HeightRequest="80" BorderColor="LightGray">
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <Image Source="Resource/Images/lock.jpg" WidthRequest="30" HeightRequest="30"/>
+                    <Label Text="**********" VerticalOptions="Center" Margin="30,0,0,0"/>
+                </HorizontalStackLayout>
+            </Frame>
+            <Label Text="Change password" Padding="20" FontSize="16" FontAttributes="Bold"/>
+            <Label Text="{Binding Error}" Padding="20" FontSize="16" FontAttributes="Bold" TextColor="Red"/>
+            <VerticalStackLayout Padding="20">
+                <Label Text="Current password" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                <Frame Padding="10,3,3,3" Margin="0,10,0,0" CornerRadius="4" BorderColor="Gray">
+                    <Entry Text="{Binding CurrentPassword}" Placeholder="********" TextColor="Black"  IsPassword="True" BackgroundColor="Transparent"></Entry>
+                </Frame>
+            </VerticalStackLayout>
+            <VerticalStackLayout Padding="20">
+                <Label Text="New password" TextTransform="Uppercase" FontSize="14" TextColor="Gray"></Label>
+                <Frame Padding="10,3,3,3" Margin="0,10,0,0" CornerRadius="4" BorderColor="Gray">
+                    <Entry Text="{Binding NewPassword}" Placeholder="********" TextColor="Black" IsPassword="True" BackgroundColor="Transparent"></Entry>
+                </Frame>
+            </VerticalStackLayout>
+            <Button Text="Change Password" TextTransform="Uppercase" FontSize="16" BackgroundColor="DodgerBlue" TextColor="White" Margin="20" Command="{Binding ChangePasswordCommand}" >
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+                Offset="5,5"
+                Radius="20"
+                Opacity="0.8" />
+                </Button.Shadow>
+            </Button>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

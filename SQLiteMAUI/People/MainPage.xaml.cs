@@ -23,7 +23,7 @@ public partial class MainPage : ContentPage
     {
         string Email = email.Text;
         string Password = password.Text;
-        
+        //App.UserRepository.AddNewUser(Email.ToString(), Password.ToString());
         if (Email == null || Password == null)
         {
             toastText = "Please input email and password";
@@ -44,7 +44,7 @@ public partial class MainPage : ContentPage
             await toast.Show(cancellationTokenSource.Token);
             //await DisplayAlert("Error", "Please check your credentials", "OK");
         }
-        //App.UserRepository.AddNewUser(Email.ToString(), Password.ToString());
+        
         //await DisplayAlert("Registered successfully", repository.StatusMessage, "OK");
         //repository.AddNewStudent(UserName.ToString());
         //await DisplayAlert("E", repository.StatusMessage, "OK");
