@@ -9,15 +9,54 @@
              x:DataType="viewmodel:SelectionPageViewModel"
              >
     <ScrollView>
-        <VerticalStackLayout Padding="40">
-            <ImageButton Source="Resources/Images/UtilsIcons/arrow_left.svg" WidthRequest="30" HorizontalOptions="Start" Clicked="ImageButton_Clicked"  />
-            <Label 
-                    Text="Selections"
-                    VerticalOptions="Center" 
-                    HorizontalTextAlignment="Center"
-                    HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
-
-            <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" >
+        <VerticalStackLayout>
+            <Frame Padding="30" WidthRequest="360" HeightRequest="170" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#f7e2bd">
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <VerticalStackLayout Margin="0,20,0,0">
+                        <Label Text="Selections" TextColor="WhiteSmoke" FontSize="35" HorizontalTextAlignment="Center"></Label>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+            <VerticalStackLayout Padding="40">
+                <VerticalStackLayout Margin="0,20,0,0">
+                    <Label Text="Useful informations" TextColor="Black" FontAttributes="Bold" FontSize="16"/>
+                    <HorizontalStackLayout Margin="0,10,0,0">
+                        <Frame Padding="0" BorderColor="Transparent" BackgroundColor="#bae5f5" WidthRequest="160" HeightRequest="140" CornerRadius="20" Margin="0,0,10,0">
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Frame CornerRadius="40" WidthRequest="40" HeightRequest="40" BorderColor="Transparent">
+                                    <Image Source="Resources/Images/mobileicon.png" WidthRequest="20" HeightRequest="20"/>
+                                </Frame>
+                                <Label Text="44.8k" Margin="0,5,0,5" TextColor="Black" FontSize="14" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
+                                <Label Text="Applicants" TextColor="#5e6f74" FontSize="12" HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <VerticalStackLayout>
+                            <Frame Padding="0" BorderColor="Transparent" WidthRequest="120" HeightRequest="65" Margin="0,0,0,10" BackgroundColor="#e2d3fe">
+                                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Frame CornerRadius="40" WidthRequest="40" HeightRequest="40" BorderColor="Transparent" Margin="0,0,10,0">
+                                        <Image Source="Resources/Images/computer.png" WidthRequest="20" HeightRequest="20"/>
+                                    </Frame>
+                                    <VerticalStackLayout>
+                                        <Label Text="66.9k" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
+                                        <Label Text="Latest" TextColor="#5e6f74" FontSize="12"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+                            <Frame Padding="0" BorderColor="Transparent" WidthRequest="120" HeightRequest="65" BackgroundColor="#ccf0c0">
+                                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Frame CornerRadius="40" WidthRequest="40" HeightRequest="40" BorderColor="Transparent" Margin="0,0,10,0">
+                                        <Image Source="Resources/Images/heart.png" WidthRequest="20" HeightRequest="20"/>
+                                    </Frame>
+                                    <VerticalStackLayout>
+                                        <Label Text="66.9k" HorizontalOptions="Center" FontSize="14" FontAttributes="Bold"/>
+                                        <Label Text="Full time" TextColor="#5e6f74" FontSize="12"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localt:Selections">
                         <ViewCell>
@@ -52,6 +91,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+        </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

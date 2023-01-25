@@ -9,7 +9,10 @@ public partial class ApplicantsPage : ContentPage
 		InitializeComponent();
 		userName.Text = "Mahir P.";
         StudentList = App.PersonRepository.GetAllStudents();
-		BindingContext= this;
+        numberOfApplicants.Text = StudentList.Count.ToString();
+        lastMonth.Text = Convert.ToInt32((StudentList.Count*0.3)).ToString();
+        fullTime.Text = Convert.ToInt32((StudentList.Count * 0.2)).ToString();
+        BindingContext = this;
 	}
 
     private async void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
