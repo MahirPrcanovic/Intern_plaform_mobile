@@ -15,6 +15,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(SelectionsPage), typeof(SelectionsPage));
         Routing.RegisterRoute(nameof(AddNewSelectionPage), typeof(AddNewSelectionPage));
         Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
+        Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
 
     }
 }

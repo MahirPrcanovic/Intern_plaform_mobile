@@ -33,6 +33,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<SelectionRepository>();
 		builder.Services.AddSingleton<AddNewSelectionPage>();
 		builder.Services.AddSingleton<ProfilePage>();
+		builder.Services.AddSingleton<SettingsPage>();
+		builder.Services.AddSingleton<SettingsPageViewModel>();
         return builder.Build();
 	}
 }

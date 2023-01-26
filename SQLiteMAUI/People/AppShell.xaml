@@ -36,4 +36,9 @@
             <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage"/>
         </Tab>
     </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" Route="SettingsPage"/>
+        </Tab>
+    </FlyoutItem>
 </Shell>
