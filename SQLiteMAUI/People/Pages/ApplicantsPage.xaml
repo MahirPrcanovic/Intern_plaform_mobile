@@ -7,7 +7,7 @@
              >
     <ScrollView>
         <VerticalStackLayout>
-            <Frame Padding="30" WidthRequest="360" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="LightGray">
+            <Frame Padding="30" WidthRequest="360" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#a5d7f9">
                 <VerticalStackLayout>
                     <HorizontalStackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="120">

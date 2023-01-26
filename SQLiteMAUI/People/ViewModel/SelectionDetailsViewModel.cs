@@ -38,7 +38,7 @@ namespace People.ViewModel
             selection = App.SelectionRepository.GetSelection(selectionID);
             selectionName = selection.SelectionName;
             selectionDescription = selection.Description;
-            selectionStudents = App.SelectionRepository.GetAllStudentsFromSelection(selectionID).ToObservableCollection();
+            selectionStudents = App.SelectionStudentRepository.getAllSelectionStudents(selectionID).ToObservableCollection();
             selectionStartDate = selection.DateOfStart;
             selectionEndDate = selection.DateOfEnd;
             CreatedBy = App.UserRepository.getByID(selection.UserID).Email;
@@ -49,12 +49,7 @@ namespace People.ViewModel
             text = index;
             if (index.Trim().Length == 0) return;
             selectionStudents.Add(App.PersonRepository.GetByEmail(index));
-            if(selection.Students == null)
-            {
-                selection.Students = new List<Student>();
-            }
-            selection.Students.Add(App.PersonRepository.GetByEmail(index));
-            App.SelectionRepository.AddStudentToSelection(App.PersonRepository.GetByEmail(index),selection.Id);
+            App.SelectionStudentRepository.AddNewfield(selection.Id, App.PersonRepository.GetByEmail(index).Id);
         }
     }
 }

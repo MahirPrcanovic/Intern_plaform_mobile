@@ -72,10 +72,7 @@ namespace People.Data
                 Student list = null;
                 Init();
                 list = conn.Table<Student>().FirstOrDefault(x => x.Id == studentID);
-                if(list != null)
-                {
-                    return list.Selections.ToList();
-                }
+                return new List<Selections>();
             }
             catch (Exception ex)
             {

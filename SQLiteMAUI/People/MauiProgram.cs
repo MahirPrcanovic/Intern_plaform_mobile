@@ -39,6 +39,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<WelcomeInfoViewModel>();
 		builder.Services.AddSingleton<SelectionDetailsPage>();
 		builder.Services.AddSingleton<SelectionDetailsViewModel>();
+		builder.Services.AddSingleton<SelectionStudentRepository>();
         return builder.Build();
 	}
 }

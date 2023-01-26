@@ -10,7 +10,7 @@
              >
     <ScrollView>
         <VerticalStackLayout>
-            <Frame Padding="30" WidthRequest="360" HeightRequest="200" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#f7e2bd">
+            <Frame Padding="30" WidthRequest="360" HeightRequest="200" Margin="0,-15"  CornerRadius="20" BorderColor="Transparent" BackgroundColor="#99e1fa">
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <HorizontalStackLayout>
                         <StackLayout Orientation="Horizontal" Spacing="120">
@@ -24,7 +24,8 @@
                         </Frame>
                     </HorizontalStackLayout>
                     <VerticalStackLayout Margin="0,20,0,0">
-                        <Label Text="Selections" TextColor="Black" FontSize="35" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="Selections" TextColor="White" FontSize="35" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="All selections made in one place." TextColor="Black" FontSize="14" HorizontalTextAlignment="Center" Margin="0,10,0,0"></Label>
                     </VerticalStackLayout>
                 </VerticalStackLayout>
             </Frame>

@@ -10,8 +10,9 @@ public partial class App : Application
     public static CommentRepository CommentRepository { get; set; }
     public static User loggedInUser { get; set; }
     public static SelectionRepository SelectionRepository { get; set; }
+    public static SelectionStudentRepository SelectionStudentRepository { get; set; }
 
-    public App(PersonRepository repo,UserRepository user,CommentRepository com,SelectionRepository sel)
+    public App(PersonRepository repo,UserRepository user,CommentRepository com,SelectionRepository sel, SelectionStudentRepository s)
 	{
 		InitializeComponent();
 		MainPage = new AppShell();
@@ -19,5 +20,6 @@ public partial class App : Application
         UserRepository = user;
         CommentRepository = com;
         SelectionRepository = sel;
+        SelectionStudentRepository = s;
     }
 }

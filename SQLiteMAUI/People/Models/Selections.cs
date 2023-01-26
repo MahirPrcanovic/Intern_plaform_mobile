@@ -17,8 +17,6 @@ namespace People.Models
         public String Description { get; set; } = string.Empty;
         public DateTime DateOfStart { get; set; } = DateTime.Now;
         public DateTime DateOfEnd { get; set; }
-        [ManyToMany(typeof(Student))]
-        public ICollection<Student> Students { get; set; }
         [ForeignKey(typeof(User))]
         public int UserID { get; set; }
     }

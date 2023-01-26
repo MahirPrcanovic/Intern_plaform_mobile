@@ -70,40 +70,13 @@ namespace People.Data
                 Selections found = null;
                 Init();
                 found = conn.Table<Selections>().FirstOrDefault(x => x.Id == selectionID);
-                return found.Students.ToList();
+                return new List<Student>();
             }
             catch (Exception ex)
             {
                 StatusMessage = string.Format("Nije moguće isčitati podatke iz baze. {0}", ex.Message);
             }
             return new List<Student>();
-        }
-        public void AddStudentToSelection(Student student,int selectionID)
-        {
-            int result = 0;
-            try
-            {
-                Init();
-                Selections selection = App.SelectionRepository.GetSelection(selectionID);
-                if(selection.Students == null)
-                {
-                    selection.Students = new List<Student>();
-                }
-                selection.Students.Add(student);
-                if(student.Selections == null)
-                {
-                    student.Selections = new List<Selections>();
-                }
-                student.Selections.Add(selection);
-                conn.Update(student);
-                result = conn.Update(selection);
-                //var selectionTest = GetSelection(selection.Id);
-                StatusMessage = string.Format("{0} zapis(a) updatean (Selekcija: {1})", result, selection.Students);
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = string.Format("Nije moguće updatean {0}. Greška: {1}", selectionID, ex.Message);
-            }
         }
     }
 }

@@ -7,7 +7,7 @@
     xmlns:pages ="clr-namespace:People.Pages"
     xmlns:localt="clr-namespace:People.utilities"
     Shell.NavBarIsVisible="False"
-    FlyoutBackgroundColor="#b0c4de"
+    FlyoutBackgroundColor="#72c4fb"
     
     FlyoutWidth="250"
     >

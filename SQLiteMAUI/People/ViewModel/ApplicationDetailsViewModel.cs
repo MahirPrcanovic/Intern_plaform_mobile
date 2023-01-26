@@ -42,7 +42,7 @@ namespace People.ViewModel
             cVUrl = foundStudent.CV;
             CoverLetter = foundStudent.CoverLetter;
             commentList = App.CommentRepository.GetAllStudentsComments(foundStudent.Id).ToObservableCollection();
-            selectionList = App.PersonRepository.getAllStudentSelections(studentID).ToObservableCollection();
+            selectionList = App.SelectionStudentRepository.getAllStudentSelections(studentID).ToObservableCollection();
         }
         [RelayCommand]
         public void AddNewComment()
