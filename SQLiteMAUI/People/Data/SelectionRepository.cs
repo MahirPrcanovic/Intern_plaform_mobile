@@ -78,5 +78,20 @@ namespace People.Data
             }
             return new List<Student>();
         }
+        public void Update(Selections selection)
+        {
+            int result = 0;
+            try
+            {
+                Init();
+                result = conn.Update(selection);
+                //var selectionTest = GetSelection(selection.Id);
+                StatusMessage = string.Format("{0} zapis(a) updatean (Selekcija: {1})", result, selection.Students);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće updatean {0}. Greška: {1}", selection.SelectionName, ex.Message);
+            }
+        }
     }
 }

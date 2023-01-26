@@ -47,7 +47,14 @@ namespace People.ViewModel
         public void AddNewStudent()
         {
             text = index;
+            if (index.Trim().Length == 0) return;
             selectionStudents.Add(App.PersonRepository.GetByEmail(index));
+            if(selection.Students == null)
+            {
+                selection.Students = new List<Student>();
+            }
+            selection.Students.Add(App.PersonRepository.GetByEmail(index));
+            App.SelectionRepository.Update(selection);
         }
     }
 }
