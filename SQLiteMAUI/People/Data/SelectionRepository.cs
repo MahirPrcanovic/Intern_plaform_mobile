@@ -48,5 +48,35 @@ namespace People.Data
             }
             return new List<Selections>();
         }
+        public Selections GetSelection(int selectionID)
+        {
+            Selections found = null;
+            try
+            {
+                Init();
+                found = conn.Table<Selections>().FirstOrDefault(x => x.Id == selectionID);
+                return found;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće dodati {0}. Greška: {1}", selectionID, ex.Message);
+                return null;
+            }
+        }
+        public List<Student> GetAllStudentsFromSelection(int selectionID)
+        {
+            try
+            {
+                Selections found = null;
+                Init();
+                found = conn.Table<Selections>().FirstOrDefault(x => x.Id == selectionID);
+                return found.Students.ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće isčitati podatke iz baze. {0}", ex.Message);
+            }
+            return new List<Student>();
+        }
     }
 }

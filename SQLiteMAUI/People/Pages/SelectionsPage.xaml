@@ -38,7 +38,7 @@
                                     <Image Source="Resources/Images/mobileicon.png" WidthRequest="20" HeightRequest="20"/>
                                 </Frame>
                                 <Label Text="{Binding SelectionCount}" Margin="0,5,0,5" TextColor="Black" FontSize="14" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
-                                <Label Text="Applicants" TextColor="#5e6f74" FontSize="12" HorizontalTextAlignment="Center"/>
+                                <Label Text="Selections" TextColor="#5e6f74" FontSize="12" HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </Frame>
                         <VerticalStackLayout>
@@ -67,7 +67,7 @@
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
-                <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" Margin="0,30,0,0">
+                <ListView ItemsSource="{Binding SelectionList}" RowHeight="150" Margin="0,30,0,0" ItemTapped="ListView_ItemTapped_1">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="localt:Selections">
                         <ViewCell>

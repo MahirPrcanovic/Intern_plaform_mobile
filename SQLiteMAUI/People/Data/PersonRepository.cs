@@ -76,6 +76,19 @@ namespace People.Data
             }
             return null;
         }
-            
+        public Student GetByEmail(String email)
+        {
+            try
+            {
+                Init();
+                return conn.Table<Student>().FirstOrDefault(student => student.Email == email);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Student does not exist. {0}", ex.Message);
+            }
+            return null;
+        }
+
     }
 }
