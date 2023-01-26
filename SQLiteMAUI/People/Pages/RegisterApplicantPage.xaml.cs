@@ -21,7 +21,7 @@ public partial class RegisterApplicantPage : ContentPage
     private async void Button_Clicked(object sender, EventArgs e)
     {
 
-        await Shell.Current.GoToAsync("..");
+        await Navigation.PushAsync(new MainPage());
         //await Navigation.PushAsync(new MainPage(userRep,repository));
     }
 

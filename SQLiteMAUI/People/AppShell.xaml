@@ -7,36 +7,37 @@
     xmlns:pages ="clr-namespace:People.Pages"
     xmlns:localt="clr-namespace:People.utilities"
     Shell.NavBarIsVisible="False"
-    FlyoutBackgroundColor="Black"
+    FlyoutBackgroundColor="#b0c4de"
+    
     FlyoutWidth="250"
     >
 
     <ShellContent
         Title="Flyout"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate pages:WelcomeInfoPage}"
+        Route="WelcomeInfoPage" />
     <FlyoutItem
-        Title="Applicant page" >
+        Title="Applicant page" FlyoutIcon="Resources/Images/iconlistgray.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ApplicantsPage}" Route="ApplicantsPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Selections page">
+    <FlyoutItem Title="Selections page" FlyoutIcon="Resources/Images/iconlistgray.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:SelectionsPage}" Route="SelectionsPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Add new selection">
+    <FlyoutItem Title="Add new selection" FlyoutIcon="Resources/Images/plus.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:AddNewSelectionPage}" Route="AddNewSelectionPage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Profile">
+    <FlyoutItem Title="Profile" FlyoutIcon="Resources/Images/avatarlight.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage}" Route="ProfilePage"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Settings">
+    <FlyoutItem Title="Settings" FlyoutIcon="Resources/Images/setting.png">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" Route="SettingsPage"/>
         </Tab>

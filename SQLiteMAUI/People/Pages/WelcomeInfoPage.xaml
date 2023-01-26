@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="People.Pages.WelcomeInfoPage"
+             xmlns:viewmodel="clr-namespace:People.ViewModel"
+             x:DataType="viewmodel:WelcomeInfoViewModel"
+             BackgroundColor="White"
+             Shell.FlyoutBehavior="Disabled"
+             Title="WelcomeInfoPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="60,60,0,0">
+            <Image Source="Resources/Images/appicon.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start" Margin="-30,0,0,0" />
+            <HorizontalStackLayout>
+                <Label Text="Welcome to" FontSize="30" FontAttributes="Bold" CharacterSpacing=".8" TextColor="Gray" FontFamily="OpenSans"/>
+                <Label Text="IP" FontSize="30" FontAttributes="Bold" CharacterSpacing=".8" TextColor="Black" Margin="10,0,0,0" FontFamily="OpenSans"/>
+            </HorizontalStackLayout>
+            <Label Text="Internship platform made for PTF" Margin="0,20,0,10" FontSize="16" WidthRequest="200" TextColor="Gray" HorizontalOptions="Start" FontFamily="OpenSans"/>
+            <Image Source="Resources/Images/welcome.jpg" WidthRequest="300" HeightRequest="200" HorizontalOptions="Center" Margin="-50,0,0,0"/>
+            <Button Text="Sign in" FontSize="18" TextColor="White" HorizontalOptions="Start" WidthRequest="250" BackgroundColor="DodgerBlue" HeightRequest="60" CornerRadius="20" Margin="0,5,0,0" Clicked="Button_Clicked"/>
+            <Button Text="Register for internship" Margin="0,15,0,0" FontSize="18" TextColor="DodgerBlue" HorizontalOptions="Start" WidthRequest="250" HeightRequest="60" CornerRadius="20" BorderColor="DodgerBlue" BorderWidth="1" Clicked="Button_Clicked_1"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
