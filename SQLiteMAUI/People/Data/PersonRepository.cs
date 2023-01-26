@@ -64,6 +64,26 @@ namespace People.Data
 
             return new List<Student>();
         }
+        public List<Selections> getAllStudentSelections(int studentID)
+        {
+            // TODO: Init then retrieve a list of Person objects from the database into a list
+            try
+            {
+                Student list = null;
+                Init();
+                list = conn.Table<Student>().FirstOrDefault(x => x.Id == studentID);
+                if(list != null)
+                {
+                    return list.Selections.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Nije moguće isčitati podatke iz baze. {0}", ex.Message);
+            }
+
+            return new List<Selections>();
+        }
         public Student GetSingleStudent(int id)
         {
             try

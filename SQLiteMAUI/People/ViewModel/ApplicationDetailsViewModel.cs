@@ -27,6 +27,8 @@ namespace People.ViewModel
         [ObservableProperty]
         ObservableCollection<Comments> commentList;
         Student foundStudent;
+        [ObservableProperty]
+        ObservableCollection<Selections> selectionList;
         public ApplicationDetailsViewModel(int studentID)
         {
             student = studentID.ToString();
@@ -40,6 +42,7 @@ namespace People.ViewModel
             cVUrl = foundStudent.CV;
             CoverLetter = foundStudent.CoverLetter;
             commentList = App.CommentRepository.GetAllStudentsComments(foundStudent.Id).ToObservableCollection();
+            selectionList = App.PersonRepository.getAllStudentSelections(studentID).ToObservableCollection();
         }
         [RelayCommand]
         public void AddNewComment()

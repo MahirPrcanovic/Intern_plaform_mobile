@@ -54,7 +54,7 @@ namespace People.ViewModel
                 selection.Students = new List<Student>();
             }
             selection.Students.Add(App.PersonRepository.GetByEmail(index));
-            App.SelectionRepository.Update(selection);
+            App.SelectionRepository.AddStudentToSelection(App.PersonRepository.GetByEmail(index),selection.Id);
         }
     }
 }
